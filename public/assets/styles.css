@@ -195,7 +195,6 @@ ul {
 .w-nav-button:focus {
   outline: 0;
 }
-
 @media screen and (max-width: 991px) {
   .w-nav[data-collapse='medium'] .w-nav-menu {
     display: none;
@@ -207,11 +206,16 @@ ul {
     left: 0;
     right: 0;
     top: 92px;
+    bottom: 0; 
     background: white;
     transform: translateY(-50%);
     opacity: 0;
     transition: transform 250ms ease, opacity 250ms ease;
     will-change: transform, opacity;
+
+   
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; 
   }
 
   .w-nav[data-collapse='medium'] .w-nav-menu.is-visible.is-open {
