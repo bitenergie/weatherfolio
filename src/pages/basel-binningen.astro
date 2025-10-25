@@ -1,0 +1,42 @@
+---
+import Header from "../components/Header.astro";
+import Sidebar from "../components/Sidebar.astro";
+import PlotlyChart from "../components/PlotlyChart.astro";
+---
+<!doctype html>
+<html>
+<Header title="Basel / Binningen" />
+<body>
+    <div class="content">
+    <Sidebar selectedItem="basel-binningen" />
+    <nav class="main">
+        <div class="container">
+        <div class="back-nav-container">
+            <a href="/" class="back-nav-button w-inline-block"
+            ><img
+                src="/assets/back.svg"
+                loading="lazy"
+                alt=""
+                class="back-nav-img"
+            />
+            <div>Back</div></a
+            >
+        </div>
+        <div class="content-container">
+            <h1>Basel / Binningen</h1>
+            <section class="items-container">
+            <h3>Psychometric</h3>
+            <PlotlyChart dataPath="/data/BAS/psych_chart.json" chartId="BAS-psych" />
+            <h3>Temperature</h3>
+            <PlotlyChart dataPath="/data/BAS/hourly_chart.json" chartId="BAS-hourly"/>
+            <h3>Wind</h3>
+            <PlotlyChart dataPath="/data/BAS/wind_chart.json" chartId="BAS-wind"/>
+            </section>
+        </div>
+        </div>
+    </nav>
+    </div>
+
+</body>
+</html>
+        

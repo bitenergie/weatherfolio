@@ -20,3 +20,5 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 .yarn/install-state.gz
+
+.pytest_cache/

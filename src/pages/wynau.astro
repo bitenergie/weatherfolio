@@ -1,0 +1,42 @@
+---
+import Header from "../components/Header.astro";
+import Sidebar from "../components/Sidebar.astro";
+import PlotlyChart from "../components/PlotlyChart.astro";
+---
+<!doctype html>
+<html>
+<Header title="Wynau" />
+<body>
+    <div class="content">
+    <Sidebar selectedItem="wynau" />
+    <nav class="main">
+        <div class="container">
+        <div class="back-nav-container">
+            <a href="/" class="back-nav-button w-inline-block"
+            ><img
+                src="/assets/back.svg"
+                loading="lazy"
+                alt=""
+                class="back-nav-img"
+            />
+            <div>Back</div></a
+            >
+        </div>
+        <div class="content-container">
+            <h1>Wynau</h1>
+            <section class="items-container">
+            <h3>Psychometric</h3>
+            <PlotlyChart dataPath="/data/WYN/psych_chart.json" chartId="WYN-psych" />
+            <h3>Temperature</h3>
+            <PlotlyChart dataPath="/data/WYN/hourly_chart.json" chartId="WYN-hourly"/>
+            <h3>Wind</h3>
+            <PlotlyChart dataPath="/data/WYN/wind_chart.json" chartId="WYN-wind"/>
+            </section>
+        </div>
+        </div>
+    </nav>
+    </div>
+
+</body>
+</html>
+        

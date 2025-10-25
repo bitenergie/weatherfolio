@@ -1,0 +1,45 @@
+---
+
+const { dataPath, chartId  } = Astro.props;
+---
+
+<!-- Store the message prop as a data attribute. -->
+<plotly-chart data-path={dataPath} , data-id={chartId}>
+  <div id={chartId} style="width:100%;height:400px;"></div>
+</plotly-chart>
+
+<script>
+  import Plotly from "plotly.js-dist-min";
+
+  class PlotlyChart extends HTMLElement {
+    async connectedCallback() {
+      const dataPath = this.dataset.path;
+      const chartId = this.dataset.id;
+      const container = this.querySelector(`#${chartId}`);
+
+      if (!container) {
+        console.error("Chart container not found for ID:", chartId);
+        return;
+      }
+
+      try {
+        const res = await fetch(dataPath);
+        const plotlyData = await res.json();
+        Plotly.newPlot(container, plotlyData.data, plotlyData.layout || {}, {
+          responsive: true,
+          displaylogo: false,
+          toImageButtonOptions: {
+            format: "png",
+          },
+        });
+      } catch (err) {
+        console.error("Error loading Plotly chart:", err);
+      }
+    }
+  }
+
+  customElements.define("plotly-chart", PlotlyChart);
+  
+</script>
+
+

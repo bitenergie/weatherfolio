@@ -1,0 +1,42 @@
+---
+import Header from "../components/Header.astro";
+import Sidebar from "../components/Sidebar.astro";
+import PlotlyChart from "../components/PlotlyChart.astro";
+---
+<!doctype html>
+<html>
+<Header title="Rünenberg" />
+<body>
+    <div class="content">
+    <Sidebar selectedItem="runenberg" />
+    <nav class="main">
+        <div class="container">
+        <div class="back-nav-container">
+            <a href="/" class="back-nav-button w-inline-block"
+            ><img
+                src="/assets/back.svg"
+                loading="lazy"
+                alt=""
+                class="back-nav-img"
+            />
+            <div>Back</div></a
+            >
+        </div>
+        <div class="content-container">
+            <h1>Rünenberg</h1>
+            <section class="items-container">
+            <h3>Psychometric</h3>
+            <PlotlyChart dataPath="/data/RUE/psych_chart.json" chartId="RUE-psych" />
+            <h3>Temperature</h3>
+            <PlotlyChart dataPath="/data/RUE/hourly_chart.json" chartId="RUE-hourly"/>
+            <h3>Wind</h3>
+            <PlotlyChart dataPath="/data/RUE/wind_chart.json" chartId="RUE-wind"/>
+            </section>
+        </div>
+        </div>
+    </nav>
+    </div>
+
+</body>
+</html>
+        

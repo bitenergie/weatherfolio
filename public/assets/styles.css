@@ -232,7 +232,7 @@ ul {
 
 body {
   color: #333;
-  background-color: #161616;
+  background-color: #181825;
   font-family: IBM Plex Sans, sans-serif;
   font-size: 14px;
   line-height: 20px;
@@ -283,9 +283,13 @@ p {
   width: 100%;
   height: 100%;
   max-width: 280px;
-  background-color: #1c1c1c;
+  background-color: #181825;
   border-right: 1px solid #353535;
   padding: 32px;
+}
+
+.nav {
+  overflow-y: auto;
 }
 
 .nav-content {
@@ -326,7 +330,7 @@ p {
 .main {
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(rgba(28, 28, 28, 0.64), rgba(28, 28, 28, 0.64)), url('./grid-top-right.svg'), linear-gradient(rgba(28, 28, 28, 0.24), rgba(28, 28, 28, 0.24));
+  background-image: linear-gradient(#181825d7, #1c1c2c8f), url('./grid-top-right.svg'), linear-gradient(rgba(28, 28, 28, 0.24), rgba(28, 28, 28, 0.24));
   background-position: 0 0, 0 0, 0 0;
   background-size: auto, auto 1130px, auto;
   flex-direction: column;
@@ -338,7 +342,7 @@ p {
 
 .container {
   width: 100%;
-  max-width: 680px;
+  max-width: 1280px;
   grid-column-gap: 68px;
   grid-row-gap: 68px;
   flex-direction: column;
@@ -354,7 +358,7 @@ p {
 
 .button {
   color: #fff;
-  background-color: #1c1c1c;
+  background-color: #b4befe;
   border: 1px solid #363636;
   border-right-color: #353535;
   border-radius: 8px;
@@ -584,7 +588,7 @@ p {
   }
 
   .nav-link-container {
-    background-color: #1c1c1c;
+    background-color: #181825;
     border-radius: 0;
     padding: 18px 28px 18px 32px;
   }
